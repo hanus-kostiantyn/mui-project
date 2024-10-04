@@ -1,35 +1,19 @@
-import { Button, Typography, styled } from "@mui/material";
-import SettingsRoundedIcon from "@mui/icons-material/SettingsRounded";
-import AddRoundedIcon from "@mui/icons-material/AddRounded";
-function App() {
-    const BlueButton = styled(Button)(({ theme }) => ({
-        backgroundColor: theme.palette.otherColor.main,
-        color: "#888",
-        margin: 5,
-        "&:hover": {
-            backgroundColor: "lightblue",
-        },
-        "&:disabled": {
-            backgroundColor: "gray",
-            color: "white",
-        },
-    }));
-    return (
-        <div className="App">
-            <Button variant="text">Text</Button>
-            <Button
-                startIcon={<AddRoundedIcon />}
-                variant="contained"
-                color="otherColor"
-            >
-                Settings
-            </Button>
-            <Button variant="outlined">Outlined</Button>
-            <Typography variant="h1">h1. Heading</Typography>
+import Feed from "./components/Feed";
+import Navbar from "./components/Navbar";
+import Rightbar from "./components/Rightbar";
+import Sidebar from "./components/Sidebar";
+import { Box, Stack } from "@mui/material";
 
-            <BlueButton>My Button</BlueButton>
-            <BlueButton>Another Button</BlueButton>
-        </div>
+function App() {
+    return (
+        <Box>
+            <Navbar />
+            <Stack direction="row" spcaing={2} justifyContent="space-between">
+                <Sidebar />
+                <Feed />
+                <Rightbar />
+            </Stack>
+        </Box>
     );
 }
 
